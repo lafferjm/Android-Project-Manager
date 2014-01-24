@@ -53,7 +53,7 @@ elif argument == "install":
 elif argument == "create":
     sys.exit()
 elif argument == "build":
-    sys.exit()
+    subprocess.call(["ant", "debug"])
 else:
     print("Invalid argument")
     print("Please see android-manager help")
