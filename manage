@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
     print("Please see manage help")
     sys.exit()
 
-argument == sys.argv[1].lower()
+argument = sys.argv[1].lower()
 
 if argument == "help":
     print("""
