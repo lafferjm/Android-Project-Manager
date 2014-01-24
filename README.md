@@ -9,9 +9,9 @@ important ones to me here.
 
 Dependencies
 ------------
-Python 3
-Android sdk
-Ant
+* Python 3
+* Android sdk
+* Ant
 
 Usage
 -----
