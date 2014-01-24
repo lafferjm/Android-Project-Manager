@@ -33,6 +33,7 @@ if argument == "help":
                    with the same name as your project.
 
           build:  Builds your project.""")
+    print("\n")
 
 elif argument == "install":
     #We need to compile a regular expression to find the apk
