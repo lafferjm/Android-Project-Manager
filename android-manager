@@ -51,7 +51,37 @@ elif argument == "install":
         subprocess.call(["adb","install", "-r", apk])
 
 elif argument == "create":
-    sys.exit()
+    
+    #Get list of android sdk versions installed 
+    home = os.getenv("HOME")
+    android_targets = os.listdir(home + "/.android/platforms/")
+    android_targets = [android_targets[-2:] for android_targets in android_targets]
+    android_targets.sort()
+
+    project_name = input("Project Name: ")
+    project_name = project_name.replace(" ", "")
+
+    package_name = input("Package Name: ")
+    package_name = package_name.replace(" ", "")
+
+    print("Select target sdk version")
+    print("----------------------------")
+    for version in android_targets:
+        print("["+version+"]")
+
+    target_version = ""
+    while target_version not in android_targets:
+        target_version = input("Target Version: ")
+
+    target_version = "android-"+target_version
+
+    os.mkdir(project_name)
+    os.chdir(project_name)
+
+    subprocess.call(["android", "create", "project", "--target", target_version,
+                     "--name", project_name, "--path", ".", "--activity",
+                     "MainActivity", "--package", package_name])
+
 elif argument == "build":
     subprocess.call(["ant", "debug"])
 else:
