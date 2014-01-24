@@ -13,7 +13,27 @@ if len(sys.argv) != 2:
 argument == sys.argv[1].lower()
 
 if argument == "help":
-    sys.exit()
+    print("""
+          Android Project Manager
+          --------------------------
+          This script will help you to manage your android
+          application projects.  The commands that this script allows are:
+            --help
+            --install
+            --create
+            --build
+
+          This script assumes that you are in your projects root directory when run. 
+
+          help:  This command prints this current document.
+
+          install:  Installs the project to your phone (not emulator).
+
+          create:  Creates the project.  When creating the project it creates a folder
+                   with the same name as your project.
+
+          build:  Builds your project.""")
+
 elif argument == "install":
     sys.exit()
 elif argument == "create":
@@ -23,3 +43,5 @@ elif argument == "build":
 else:
     print("Invalid argument")
     print("Please see manage help")
+
+sys.exit()
