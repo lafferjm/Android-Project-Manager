@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+import re
+import subprocess
+
+if len(sys.argv) != 2:
+    print("Invalid number of arguments")
+    print("Please see manage help")
+    sys.exit()
+
+argument == sys.argv[1].lower()
+
+if argument == "help":
+    sys.exit()
+elif argument == "install":
+    sys.exit()
+elif argument == "create":
+    sys.exit()
+elif argument == "build":
+    sys.exit()
+else:
+    print("Invalid argument")
+    print("Please see manage help")
