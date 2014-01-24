@@ -7,7 +7,7 @@ import subprocess
 
 if len(sys.argv) != 2:
     print("Invalid number of arguments")
-    print("Please see manage help")
+    print("Please see android-manager help")
     sys.exit()
 
 argument = sys.argv[1].lower()
@@ -42,6 +42,6 @@ elif argument == "build":
     sys.exit()
 else:
     print("Invalid argument")
-    print("Please see manage help")
+    print("Please see android-manager help")
 
 sys.exit()
