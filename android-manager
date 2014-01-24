@@ -64,6 +64,7 @@ elif argument == "create":
     package_name = input("Package Name: ")
     package_name = package_name.replace(" ", "")
 
+    print("\n")
     print("Select target sdk version")
     print("----------------------------")
     for version in android_targets:
