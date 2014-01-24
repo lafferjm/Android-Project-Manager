@@ -35,7 +35,21 @@ if argument == "help":
           build:  Builds your project.""")
 
 elif argument == "install":
-    sys.exit()
+    #We need to compile a regular expression to find the apk
+    #to be installed
+    expression = re.compile("[A-Za-z]+-debug.apk")
+
+    for directory in os.listdir("bin/"):
+        apk = expression.match(directory)
+        if apk is not None:
+            break
+    
+    if apk is None:
+        print("Please build project first")
+    else:
+        apk = "bin/" + apk.string
+        subprocess.call(["adb","install", "-r", apk])
+
 elif argument == "create":
     sys.exit()
 elif argument == "build":
